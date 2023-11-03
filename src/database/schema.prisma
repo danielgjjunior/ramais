@@ -1,0 +1,58 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "./generated/client"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Funcionario {
+  id                  Int      @id @default(autoincrement())
+  cidadeId            Int
+  nome                String
+  ramal               String
+  telefone_corporativo String
+  funcaoId            Int
+  email               String
+  Skype               String
+
+  cidade              Cidades  @relation(fields: [cidadeId], references: [id])
+  funcao              Funcao_funcionario @relation(fields: [funcaoId], references: [id])
+}
+
+model Cidades {
+  id       Int     @id @default(autoincrement())
+  nome     String
+  estadoId Int
+  estado   Estado  @relation(fields: [estadoId], references: [id])
+  funcionarios Funcionario[]
+}
+
+
+model Estado {
+  id         Int       @id @default(autoincrement())
+  nome       String
+  abreviacao String
+  cidades    Cidades[]
+}
+
+model Funcao_funcionario {
+  id         Int     @id @default(autoincrement())
+  nome       String
+  setorId    Int
+  descricao  String
+  setor      Setor   @relation(fields: [setorId], references: [id])
+  funcionarios Funcionario[]
+}
+
+
+model Setor {
+  id         Int     @id @default(autoincrement())
+  nome       String
+  descricao  String
+  funcoes    Funcao_funcionario[]
+}
+
+

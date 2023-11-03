@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentação de Funcionários</title>
+</head>
+<body>
+    <h1>Documentação de Funcionários</h1>
+    
+    <h2>Criar um funcionário:</h2>
+    <p><strong>Rota:</strong> POST /funcionarios</p>
+    <p><strong>Corpo da requisição (exemplo em JSON):</strong></p>
+    <pre>
+{
+  "cidadeId": 1,
+  "nome": "João",
+  "ramal": "123",
+  "telefone_corporativo": "987654321",
+  "funcaoId": 1,
+  "email": "joao@example.com",
+  "Skype": "joao.skype"
+}
+    </pre>
+
+    <h2>Obter todos os funcionários:</h2>
+    <p><strong>Rota:</strong> GET /funcionarios</p>
+
+    <h2>Obter um funcionário por ID (substitua :id pelo ID real do funcionário):</h2>
+    <p><strong>Rota:</strong> GET /funcionarios/:id</p>
+
+    <h2>Atualizar um funcionário por ID (substitua :id pelo ID real do funcionário):</h2>
+    <p><strong>Rota:</strong> PUT /funcionarios/:id</p>
+    <p><strong>Corpo da requisição (exemplo em JSON para atualização):</strong></p>
+    <pre>
+{
+  "ramal": "456",
+  "telefone_corporativo": "555555555",
+  "Skype": "joao.skype2"
+}
+    </pre>
+
+    <h2>Deletar um funcionário por ID (substitua :id pelo ID real do funcionário):</h2>
+    <p><strong>Rota:</strong> DELETE /funcionarios/:id</p>
+
+    <h2>Criar uma cidade:</h2>
+    <p><strong>Rota:</strong> POST /cidades</p>
+    <p><strong>Corpo da requisição (exemplo em JSON):</strong></p>
+    <pre>
+{
+  "nome": "São Paulo",
+  "estadoId": 1
+}
+    </pre>
+
+    <h2>Obter todas as cidades:</h2>
+    <p><strong>Rota:</strong> GET /cidades</p>
+
+    <h2>Obter uma cidade por ID (substitua :id pelo ID real da cidade):</h2>
+    <p><strong>Rota:</strong> GET /cidades/:id</p>
+
+    <h2>Atualizar uma cidade por ID (substitua :id pelo ID real da cidade):</h2>
+    <p><strong>Rota:</strong> PUT /cidades/:id</p>
+    <p><strong>Corpo da requisição (exemplo em JSON para atualização):</strong></p>
+    <pre>
+{
+  "nome": "Rio de Janeiro",
+  "estadoId": 2
+}
+    </pre>
+
+    <h2>Deletar uma cidade por ID (substitua :id pelo ID real da cidade):</h2>
+    <p><strong>Rota:</strong> DELETE /cidades/:id</p>
+
+    <h2>Rotas para a tabela Estado:</h2>
+
+    <h2>Criar um estado:</h2>
+    <p><strong>Rota:</strong> POST /estados</p>
+    <p><strong>Corpo da requisição (exemplo em JSON):</strong></p>
+    <pre>
+{
+  "nome": "São Paulo",
+  "abreviacao": "SP"
+}
+    </pre>
+
+    <h2>Obter todos os estados:</h2>
+    <p><strong>Rota:</strong> GET /estados</p>
+
+    <h2>Obter um estado por ID (substitua :id pelo ID real do estado):</h2>
+    <p><strong>Rota:</strong> GET /estados/:id</p>
+
+    <h2>Atualizar um estado por ID (substitua :id pelo ID real do estado):</h2>
+    <p><strong>Rota:</strong> PUT /estados/:id</p>
+    <p><strong>Corpo da requisição (exemplo em JSON para atualização):</strong></p>
+    <pre>
+{
+  "nome": "Rio de Janeiro",
+  "abreviacao": "RJ"
+}
+    </pre>
+
+    <h2>Deletar um estado por ID (substitua :id pelo ID real do estado):</h2>
+    <p><strong>Rota:</strong> DELETE /estados/:id</p>
+
+
+    <h2>Rotas para a tabela Setor:</h2>
+
+    <h2>Criar um setor:</h2>
+    <p><strong>Rota:</strong> POST /setores</p>
+    <p><strong>Corpo da requisição (exemplo em JSON):</strong></p>
+    <pre>
+{
+  "nome": "TI",
+  "descricao": "Tecnologia da Informação"
+}
+    </pre>
+
+    <h2>Obter todos os setores:</h2>
+    <p><strong>Rota:</strong> GET /setores</p>
+
+    <h2>Obter um setor por ID (substitua :id pelo ID real do setor):</h2>
+    <p><strong>Rota:</strong> GET /setores/:id</p>
+
+    <h2>Atualizar um setor por ID (substitua :id pelo ID real do setor):</h2>
+    <p><strong>Rota:</strong> PUT /setores/:id</p>
+    <p><strong>Corpo da requisição (exemplo em JSON para atualização):</strong></p>
+    <pre>
+{
+  "nome": "RH",
+  "descricao": "Recursos Humanos"
+}
+    </pre>
+
+    <h2>Deletar um setor por ID (substitua :id pelo ID real do setor):</h2>
+    <p><strong>Rota:</strong> DELETE /setores/:id</p>
+</body>
+</html>
