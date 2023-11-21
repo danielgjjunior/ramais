@@ -17,11 +17,11 @@ exports.$Enums = {}
 
 /**
  * Prisma Client JS version: 5.3.1
- * Query Engine version: 61e140623197a131c2a6189271ffee05a7aa9a59
+ * Query Engine version: e95e739751f42d8ca026f6b910f5a2dc5adeaeee
  */
 Prisma.prismaVersion = {
   client: "5.3.1",
-  engine: "61e140623197a131c2a6189271ffee05a7aa9a59"
+  engine: "e95e739751f42d8ca026f6b910f5a2dc5adeaeee"
 }
 
 Prisma.PrismaClientKnownRequestError = () => {
@@ -115,7 +115,8 @@ exports.Prisma.FuncionarioScalarFieldEnum = {
   telefone_corporativo: 'telefone_corporativo',
   funcaoId: 'funcaoId',
   email: 'email',
-  Skype: 'Skype'
+  Skype: 'Skype',
+  telefone_particular: 'telefone_particular'
 };
 
 exports.Prisma.CidadesScalarFieldEnum = {
@@ -146,6 +147,11 @@ exports.Prisma.SetorScalarFieldEnum = {
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
+};
+
+exports.Prisma.NullsOrder = {
+  first: 'first',
+  last: 'last'
 };
 
 

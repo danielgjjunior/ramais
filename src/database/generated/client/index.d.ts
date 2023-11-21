@@ -268,7 +268,7 @@ export namespace Prisma {
 
   /**
    * Prisma Client JS version: 5.3.1
-   * Query Engine version: 61e140623197a131c2a6189271ffee05a7aa9a59
+   * Query Engine version: e95e739751f42d8ca026f6b910f5a2dc5adeaeee
    */
   export type PrismaVersion = {
     client: string
@@ -1356,6 +1356,7 @@ export namespace Prisma {
     funcaoId: number | null
     email: string | null
     Skype: string | null
+    telefone_particular: string | null
   }
 
   export type FuncionarioMaxAggregateOutputType = {
@@ -1367,6 +1368,7 @@ export namespace Prisma {
     funcaoId: number | null
     email: string | null
     Skype: string | null
+    telefone_particular: string | null
   }
 
   export type FuncionarioCountAggregateOutputType = {
@@ -1378,6 +1380,7 @@ export namespace Prisma {
     funcaoId: number
     email: number
     Skype: number
+    telefone_particular: number
     _all: number
   }
 
@@ -1403,6 +1406,7 @@ export namespace Prisma {
     funcaoId?: true
     email?: true
     Skype?: true
+    telefone_particular?: true
   }
 
   export type FuncionarioMaxAggregateInputType = {
@@ -1414,6 +1418,7 @@ export namespace Prisma {
     funcaoId?: true
     email?: true
     Skype?: true
+    telefone_particular?: true
   }
 
   export type FuncionarioCountAggregateInputType = {
@@ -1425,6 +1430,7 @@ export namespace Prisma {
     funcaoId?: true
     email?: true
     Skype?: true
+    telefone_particular?: true
     _all?: true
   }
 
@@ -1523,6 +1529,7 @@ export namespace Prisma {
     funcaoId: number
     email: string
     Skype: string
+    telefone_particular: string | null
     _count: FuncionarioCountAggregateOutputType | null
     _avg: FuncionarioAvgAggregateOutputType | null
     _sum: FuncionarioSumAggregateOutputType | null
@@ -1553,6 +1560,7 @@ export namespace Prisma {
     funcaoId?: boolean
     email?: boolean
     Skype?: boolean
+    telefone_particular?: boolean
     cidade?: boolean | CidadesDefaultArgs<ExtArgs>
     funcao?: boolean | Funcao_funcionarioDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["funcionario"]>
@@ -1566,6 +1574,7 @@ export namespace Prisma {
     funcaoId?: boolean
     email?: boolean
     Skype?: boolean
+    telefone_particular?: boolean
   }
 
   export type FuncionarioInclude<ExtArgs extends $Extensions.Args = $Extensions.DefaultArgs> = {
@@ -1589,6 +1598,7 @@ export namespace Prisma {
       funcaoId: number
       email: string
       Skype: string
+      telefone_particular: string | null
     }, ExtArgs["result"]["funcionario"]>
     composites: {}
   }
@@ -1994,6 +2004,7 @@ export namespace Prisma {
     readonly funcaoId: FieldRef<"Funcionario", 'Int'>
     readonly email: FieldRef<"Funcionario", 'String'>
     readonly Skype: FieldRef<"Funcionario", 'String'>
+    readonly telefone_particular: FieldRef<"Funcionario", 'String'>
   }
     
 
@@ -6184,7 +6195,8 @@ export namespace Prisma {
     telefone_corporativo: 'telefone_corporativo',
     funcaoId: 'funcaoId',
     email: 'email',
-    Skype: 'Skype'
+    Skype: 'Skype',
+    telefone_particular: 'telefone_particular'
   };
 
   export type FuncionarioScalarFieldEnum = (typeof FuncionarioScalarFieldEnum)[keyof typeof FuncionarioScalarFieldEnum]
@@ -6235,6 +6247,14 @@ export namespace Prisma {
   export type SortOrder = (typeof SortOrder)[keyof typeof SortOrder]
 
 
+  export const NullsOrder: {
+    first: 'first',
+    last: 'last'
+  };
+
+  export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
+
+
   /**
    * Field references 
    */
@@ -6276,6 +6296,7 @@ export namespace Prisma {
     funcaoId?: IntFilter<"Funcionario"> | number
     email?: StringFilter<"Funcionario"> | string
     Skype?: StringFilter<"Funcionario"> | string
+    telefone_particular?: StringNullableFilter<"Funcionario"> | string | null
     cidade?: XOR<CidadesRelationFilter, CidadesWhereInput>
     funcao?: XOR<Funcao_funcionarioRelationFilter, Funcao_funcionarioWhereInput>
   }
@@ -6289,6 +6310,7 @@ export namespace Prisma {
     funcaoId?: SortOrder
     email?: SortOrder
     Skype?: SortOrder
+    telefone_particular?: SortOrderInput | SortOrder
     cidade?: CidadesOrderByWithRelationInput
     funcao?: Funcao_funcionarioOrderByWithRelationInput
   }
@@ -6305,6 +6327,7 @@ export namespace Prisma {
     funcaoId?: IntFilter<"Funcionario"> | number
     email?: StringFilter<"Funcionario"> | string
     Skype?: StringFilter<"Funcionario"> | string
+    telefone_particular?: StringNullableFilter<"Funcionario"> | string | null
     cidade?: XOR<CidadesRelationFilter, CidadesWhereInput>
     funcao?: XOR<Funcao_funcionarioRelationFilter, Funcao_funcionarioWhereInput>
   }, "id">
@@ -6318,6 +6341,7 @@ export namespace Prisma {
     funcaoId?: SortOrder
     email?: SortOrder
     Skype?: SortOrder
+    telefone_particular?: SortOrderInput | SortOrder
     _count?: FuncionarioCountOrderByAggregateInput
     _avg?: FuncionarioAvgOrderByAggregateInput
     _max?: FuncionarioMaxOrderByAggregateInput
@@ -6337,6 +6361,7 @@ export namespace Prisma {
     funcaoId?: IntWithAggregatesFilter<"Funcionario"> | number
     email?: StringWithAggregatesFilter<"Funcionario"> | string
     Skype?: StringWithAggregatesFilter<"Funcionario"> | string
+    telefone_particular?: StringNullableWithAggregatesFilter<"Funcionario"> | string | null
   }
 
   export type CidadesWhereInput = {
@@ -6544,6 +6569,7 @@ export namespace Prisma {
     telefone_corporativo: string
     email: string
     Skype: string
+    telefone_particular?: string | null
     cidade: CidadesCreateNestedOneWithoutFuncionariosInput
     funcao: Funcao_funcionarioCreateNestedOneWithoutFuncionariosInput
   }
@@ -6557,6 +6583,7 @@ export namespace Prisma {
     funcaoId: number
     email: string
     Skype: string
+    telefone_particular?: string | null
   }
 
   export type FuncionarioUpdateInput = {
@@ -6565,6 +6592,7 @@ export namespace Prisma {
     telefone_corporativo?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     Skype?: StringFieldUpdateOperationsInput | string
+    telefone_particular?: NullableStringFieldUpdateOperationsInput | string | null
     cidade?: CidadesUpdateOneRequiredWithoutFuncionariosNestedInput
     funcao?: Funcao_funcionarioUpdateOneRequiredWithoutFuncionariosNestedInput
   }
@@ -6578,6 +6606,7 @@ export namespace Prisma {
     funcaoId?: IntFieldUpdateOperationsInput | number
     email?: StringFieldUpdateOperationsInput | string
     Skype?: StringFieldUpdateOperationsInput | string
+    telefone_particular?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type FuncionarioCreateManyInput = {
@@ -6589,6 +6618,7 @@ export namespace Prisma {
     funcaoId: number
     email: string
     Skype: string
+    telefone_particular?: string | null
   }
 
   export type FuncionarioUpdateManyMutationInput = {
@@ -6597,6 +6627,7 @@ export namespace Prisma {
     telefone_corporativo?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     Skype?: StringFieldUpdateOperationsInput | string
+    telefone_particular?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type FuncionarioUncheckedUpdateManyInput = {
@@ -6608,6 +6639,7 @@ export namespace Prisma {
     funcaoId?: IntFieldUpdateOperationsInput | number
     email?: StringFieldUpdateOperationsInput | string
     Skype?: StringFieldUpdateOperationsInput | string
+    telefone_particular?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type CidadesCreateInput = {
@@ -6812,6 +6844,20 @@ export namespace Prisma {
     not?: NestedStringFilter<$PrismaModel> | string
   }
 
+  export type StringNullableFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | null
+    notIn?: string[] | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    not?: NestedStringNullableFilter<$PrismaModel> | string | null
+  }
+
   export type CidadesRelationFilter = {
     is?: CidadesWhereInput
     isNot?: CidadesWhereInput
@@ -6820,6 +6866,11 @@ export namespace Prisma {
   export type Funcao_funcionarioRelationFilter = {
     is?: Funcao_funcionarioWhereInput
     isNot?: Funcao_funcionarioWhereInput
+  }
+
+  export type SortOrderInput = {
+    sort: SortOrder
+    nulls?: NullsOrder
   }
 
   export type FuncionarioCountOrderByAggregateInput = {
@@ -6831,6 +6882,7 @@ export namespace Prisma {
     funcaoId?: SortOrder
     email?: SortOrder
     Skype?: SortOrder
+    telefone_particular?: SortOrder
   }
 
   export type FuncionarioAvgOrderByAggregateInput = {
@@ -6848,6 +6900,7 @@ export namespace Prisma {
     funcaoId?: SortOrder
     email?: SortOrder
     Skype?: SortOrder
+    telefone_particular?: SortOrder
   }
 
   export type FuncionarioMinOrderByAggregateInput = {
@@ -6859,6 +6912,7 @@ export namespace Prisma {
     funcaoId?: SortOrder
     email?: SortOrder
     Skype?: SortOrder
+    telefone_particular?: SortOrder
   }
 
   export type FuncionarioSumOrderByAggregateInput = {
@@ -6898,6 +6952,23 @@ export namespace Prisma {
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedStringFilter<$PrismaModel>
     _max?: NestedStringFilter<$PrismaModel>
+  }
+
+  export type StringNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | null
+    notIn?: string[] | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    not?: NestedStringNullableWithAggregatesFilter<$PrismaModel> | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedStringNullableFilter<$PrismaModel>
+    _max?: NestedStringNullableFilter<$PrismaModel>
   }
 
   export type EstadoRelationFilter = {
@@ -7065,6 +7136,10 @@ export namespace Prisma {
 
   export type StringFieldUpdateOperationsInput = {
     set?: string
+  }
+
+  export type NullableStringFieldUpdateOperationsInput = {
+    set?: string | null
   }
 
   export type CidadesUpdateOneRequiredWithoutFuncionariosNestedInput = {
@@ -7312,6 +7387,20 @@ export namespace Prisma {
     not?: NestedStringFilter<$PrismaModel> | string
   }
 
+  export type NestedStringNullableFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | null
+    notIn?: string[] | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    not?: NestedStringNullableFilter<$PrismaModel> | string | null
+  }
+
   export type NestedIntWithAggregatesFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel>
     in?: number[]
@@ -7354,6 +7443,34 @@ export namespace Prisma {
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedStringFilter<$PrismaModel>
     _max?: NestedStringFilter<$PrismaModel>
+  }
+
+  export type NestedStringNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | null
+    notIn?: string[] | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    not?: NestedStringNullableWithAggregatesFilter<$PrismaModel> | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedStringNullableFilter<$PrismaModel>
+    _max?: NestedStringNullableFilter<$PrismaModel>
+  }
+
+  export type NestedIntNullableFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | null
+    notIn?: number[] | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableFilter<$PrismaModel> | number | null
   }
 
   export type CidadesCreateWithoutFuncionariosInput = {
@@ -7458,6 +7575,7 @@ export namespace Prisma {
     telefone_corporativo: string
     email: string
     Skype: string
+    telefone_particular?: string | null
     funcao: Funcao_funcionarioCreateNestedOneWithoutFuncionariosInput
   }
 
@@ -7469,6 +7587,7 @@ export namespace Prisma {
     funcaoId: number
     email: string
     Skype: string
+    telefone_particular?: string | null
   }
 
   export type FuncionarioCreateOrConnectWithoutCidadeInput = {
@@ -7531,6 +7650,7 @@ export namespace Prisma {
     funcaoId?: IntFilter<"Funcionario"> | number
     email?: StringFilter<"Funcionario"> | string
     Skype?: StringFilter<"Funcionario"> | string
+    telefone_particular?: StringNullableFilter<"Funcionario"> | string | null
   }
 
   export type CidadesCreateWithoutEstadoInput = {
@@ -7601,6 +7721,7 @@ export namespace Prisma {
     telefone_corporativo: string
     email: string
     Skype: string
+    telefone_particular?: string | null
     cidade: CidadesCreateNestedOneWithoutFuncionariosInput
   }
 
@@ -7612,6 +7733,7 @@ export namespace Prisma {
     telefone_corporativo: string
     email: string
     Skype: string
+    telefone_particular?: string | null
   }
 
   export type FuncionarioCreateOrConnectWithoutFuncaoInput = {
@@ -7719,6 +7841,7 @@ export namespace Prisma {
     funcaoId: number
     email: string
     Skype: string
+    telefone_particular?: string | null
   }
 
   export type FuncionarioUpdateWithoutCidadeInput = {
@@ -7727,6 +7850,7 @@ export namespace Prisma {
     telefone_corporativo?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     Skype?: StringFieldUpdateOperationsInput | string
+    telefone_particular?: NullableStringFieldUpdateOperationsInput | string | null
     funcao?: Funcao_funcionarioUpdateOneRequiredWithoutFuncionariosNestedInput
   }
 
@@ -7738,6 +7862,7 @@ export namespace Prisma {
     funcaoId?: IntFieldUpdateOperationsInput | number
     email?: StringFieldUpdateOperationsInput | string
     Skype?: StringFieldUpdateOperationsInput | string
+    telefone_particular?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type FuncionarioUncheckedUpdateManyWithoutCidadeInput = {
@@ -7748,6 +7873,7 @@ export namespace Prisma {
     funcaoId?: IntFieldUpdateOperationsInput | number
     email?: StringFieldUpdateOperationsInput | string
     Skype?: StringFieldUpdateOperationsInput | string
+    telefone_particular?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type CidadesCreateManyEstadoInput = {
@@ -7779,6 +7905,7 @@ export namespace Prisma {
     telefone_corporativo: string
     email: string
     Skype: string
+    telefone_particular?: string | null
   }
 
   export type FuncionarioUpdateWithoutFuncaoInput = {
@@ -7787,6 +7914,7 @@ export namespace Prisma {
     telefone_corporativo?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     Skype?: StringFieldUpdateOperationsInput | string
+    telefone_particular?: NullableStringFieldUpdateOperationsInput | string | null
     cidade?: CidadesUpdateOneRequiredWithoutFuncionariosNestedInput
   }
 
@@ -7798,6 +7926,7 @@ export namespace Prisma {
     telefone_corporativo?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     Skype?: StringFieldUpdateOperationsInput | string
+    telefone_particular?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type FuncionarioUncheckedUpdateManyWithoutFuncaoInput = {
@@ -7808,6 +7937,7 @@ export namespace Prisma {
     telefone_corporativo?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     Skype?: StringFieldUpdateOperationsInput | string
+    telefone_particular?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type Funcao_funcionarioCreateManySetorInput = {

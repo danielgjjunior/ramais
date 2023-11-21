@@ -4,9 +4,8 @@ const prisma = new PrismaClient();
 async function seedFuncionarios() {
   await prisma.funcionario.createMany({
     data: [
-      { cidadeId: 1, nome: 'João', ramal: '123', telefone_corporativo: '555-1234', funcaoId: 1, email: 'joao@example.com', Skype: 'joao_skype' },
-      { cidadeId: 2, nome: 'Maria', ramal: '456', telefone_corporativo: '555-5678', funcaoId: 2, email: 'maria@example.com', Skype: 'maria_skype' },
-      // Adicione mais funcionários conforme necessário
+      { cidadeId: 1, nome: 'João', ramal: '123', telefone_corporativo: '555-1234', funcaoId: 1, email: 'joao@example.com', Skype: 'joao_skype',telefone_particular:'81818181' },
+      { cidadeId: 2, nome: 'Maria', ramal: '456', telefone_corporativo: '555-5678', funcaoId: 2, email: 'maria@example.com', Skype: 'maria_skype',telefone_particular:'62956515' },
     ],
   });
 }

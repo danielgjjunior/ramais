@@ -16,7 +16,16 @@ router.post('/', async (req, res) => {
 });
 
 router.get('/', async (req, res) => {
-  const funcionarios = await prisma.funcionario.findMany();
+  const funcionarios = await prisma.funcionario.findMany({
+    include: {
+      cidade: true,
+      funcao: {
+        include: {
+          setor: true,
+        },
+      },
+    },
+  });
   res.json(funcionarios);
 });
 
@@ -24,6 +33,14 @@ router.get('/:id', async (req, res) => {
   const { id } = req.params;
   const funcionario = await prisma.funcionario.findUnique({
     where: { id: parseInt(id) },
+    include: {
+      cidade: true,
+      funcao: {
+        include: {
+          setor: true,
+        },
+      },
+    },
   });
   if (!funcionario) {
     return res.status(404).json({ error: 'Funcionário não encontrado' });

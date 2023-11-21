@@ -17,6 +17,7 @@ model Funcionario {
   funcaoId            Int
   email               String
   Skype               String
+  telefone_particular String?
 
   cidade              Cidades  @relation(fields: [cidadeId], references: [id])
   funcao              Funcao_funcionario @relation(fields: [funcaoId], references: [id])
@@ -54,3 +55,5 @@ model Setor {
   descricao  String
   funcoes    Funcao_funcionario[]
 }
+
+
