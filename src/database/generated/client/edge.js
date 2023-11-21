@@ -152,7 +152,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "C:\\Users\\Home\\Desktop\\ramais\\ramais-back\\ramais\\src\\database\\generated\\client",
+      "value": "C:\\Users\\OnNet Telecom\\Desktop\\ramais\\ramais-back\\src\\database\\generated\\client",
       "fromEnvVar": null
     },
     "config": {
